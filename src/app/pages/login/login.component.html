@@ -1,0 +1,20 @@
+<section class="page login">
+  <header class="page-header">
+    <h2>התחברות</h2>
+    <p>היכנסו לחשבון שלכם כדי להמשיך</p>
+  </header>
+
+  <main class="page-main">
+    <form class="login-form" (submit)="$event.preventDefault()">
+      <label>
+        משתמש
+        <input type="text" name="username" />
+      </label>
+      <label>
+        סיסמה
+        <input type="password" name="password" />
+      </label>
+      <button class="btn" type="submit">התחבר</button>
+    </form>
+  </main>
+</section>
