@@ -1,0 +1,56 @@
+<p>scan-page works!</p>
+<div class="w-full h-screen bg-[#D9D9D9] flex flex-col items-center pt-10" dir="rtl">
+
+  <!-- steps -->
+  <div class="flex items-center justify-center gap-16 mt-10">
+
+    <!-- step 2 -->
+    <div class="flex flex-col items-center">
+      <div class="w-20 h-20 rounded-full border border-gray-500 flex items-center justify-center">
+        <img src="assets/icons/calendar.png" class="w-12 h-12" />
+      </div>
+      <span class="mt-2 text-lg text-gray-600">שלב 2</span>
+    </div>
+
+    <!-- arrow -->
+    <img src="assets/icons/arrow-dots.png" class="w-8 opacity-60" />
+
+    <!-- step 1 -->
+    <div class="flex flex-col items-center">
+      <div class="w-20 h-20 rounded-full border border-gray-500 flex items-center justify-center">
+        <img src="assets/icons/barcode.png" class="w-12 h-12" />
+      </div>
+      <span class="mt-2 text-lg text-gray-600">שלב 1</span>
+    </div>
+
+  </div>
+
+  <!-- scanning frame -->
+  <div class="w-[80%] max-w-[350px] aspect-square mt-12 relative">
+    <!-- 4 corners -->
+    <div class="absolute top-0 left-0 w-12 h-1 border-t-4 border-l-4 border-black"></div>
+    <div class="absolute top-0 right-0 w-12 h-1 border-t-4 border-r-4 border-black"></div>
+    <div class="absolute bottom-0 left-0 w-12 h-1 border-b-4 border-l-4 border-black"></div>
+    <div class="absolute bottom-0 right-0 w-12 h-1 border-b-4 border-r-4 border-black"></div>
+  </div>
+
+  <!-- scan instruction -->
+  <p class="text-xl font-medium mt-10">
+    סרוק את הברקוד של האריזה
+  </p>
+
+  <!-- bottom buttons -->
+  <div class="w-full flex justify-between px-10 mt-16">
+    
+    <!-- add manual product -->
+    <div class="flex flex-col items-center">
+      <img src="assets/icons/edit.png" class="w-10 opacity-60" />
+      <span class="text-sm mt-2">הוספת<br/>מוצר ידני</span>
+    </div>
+
+    <!-- main scan button -->
+    <div class="w-24 h-24 bg-black rounded-full border-4 border-white"></div>
+
+  </div>
+
+</div>

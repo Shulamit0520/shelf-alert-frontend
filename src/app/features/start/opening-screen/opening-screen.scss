@@ -1,0 +1,31 @@
+/* Override PrimeNG Button shape */
+:host ::ng-deep .btn-round {
+  border-radius: 9999px !important; 
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.text{
+    /* ברוכים הבאים כיצד תרצו להתחבר? */
+
+// position: absolute;
+// width: 199px;
+// height: 62px;
+// left: calc(50% - 199px/2);
+// top: 399px;
+
+/* H2/H2-Bold-24 */
+font-family: 'IBM Plex Sans Hebrew';
+font-style: normal;
+font-weight: 700;
+// font-size: 24px;
+// line-height: 31px;
+text-align: center;
+
+/* Primary/500 */
+color: #134812;
+}
+p{
+
+}
