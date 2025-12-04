@@ -1,0 +1,80 @@
+<div
+  class="w-full min-h-screen flex flex-col items-center bg-white pt-[80px] px-6"
+  dir="rtl"
+>
+  <!-- כותרת -->
+  <h1
+    class="text-[28px] font-extrabold text-[#134812] mb-[40px] self-start text-right leading-tight"
+  >
+    הרשמה לחשבון
+  </h1>
+  <!-- אימייל -->
+  <label class="block text-[16px] text-gray-700 mb-2 self-start text-right">
+    אימייל
+  </label>
+
+
+  <input pInputText type="email"
+    class="w-full h-[3.75rem] bg-[#f5f5f5] border border-[#d9e2d9] rounded-full px-4 text-[16px] mb-5"
+    placeholder="אימייל" />
+
+  <!-- סיסמה -->
+  <label class="block text-[16px] text-gray-700 mb-2 self-start text-right">
+    סיסמא</label>
+
+  <div class="relative w-full">
+
+    <input pInputText [type]="showPassword ? 'text' : 'password'" placeholder="סיסמא" class="w-full h-[3.75rem] bg-[#f5f5f5] border border-[#d9e2d9] rounded-full
+           pr-4 pl-14 text-[1rem] text-right placeholder:text-right  mb-5" />
+
+    <!-- תמונת אייקון -->
+    <img [src]="'assets/eyes.png'" (click)="togglePassword()"
+      class="absolute left-5 top-1/2 -translate-y-1/2 cursor-pointer select-none" style="width: 1.5rem; height: 1.5rem; filter: brightness(0); filter: invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%);
+;" alt="eye icon" />
+
+  </div>
+  <!-- אימות סיסמה -->
+  <label class="block text-[16px] text-gray-700 mb-2 self-start text-right">
+    אימות סיסמא</label>
+
+  <div class="relative w-full">
+
+    <input pInputText [type]="showPassword ? 'text' : 'password'" placeholder="אימות סיסמא" class="w-full h-[3.75rem] bg-[#f5f5f5] border border-[#d9e2d9] rounded-full
+           pr-4 pl-14 text-[1rem] text-right placeholder:text-right" />
+
+    <!-- תמונת אייקון -->
+    <img [src]="'assets/eyes.png'" (click)="togglePassword()"
+      class="absolute left-5 top-1/2 -translate-y-1/2 cursor-pointer select-none" style="width: 1.5rem; height: 1.5rem; filter: brightness(0); filter: invert(50%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%);
+;" alt="eye icon" />
+
+  </div>
+
+  <!-- כפתור ראשי -->
+  <button
+    pButton
+    class="w-full h-[58px] rounded-full bg-[#134812] text-white text-[20px] font-bold shadow-md mt-10"
+  >
+    בוא נתחיל להוסיף מוצרים!
+  </button>
+
+  <!-- או -->
+  <div class="flex items-center justify-center w-full my-8">
+    <div class="flex-1 h-[1px] bg-gray-300"></div>
+    <span class="mx-4 text-gray-700 text-[18px]">או</span>
+    <div class="flex-1 h-[1px] bg-gray-300"></div>
+  </div>
+
+  <!-- Google button -->
+  <button
+    class="w-full h-[58px] rounded-full border border-gray-300 flex items-center justify-center gap-3 bg-white text-[18px]"
+  >
+    <img src="assets/icons_google.png" class="w-[22px]" />
+    התחברות עם גוגל
+  </button>
+
+  <!-- קישור תחתון -->
+  <p class="text-center mt-8 text-[18px] text-gray-800">
+    כבר יש לך משתמש?
+    <span class="font-bold text-[#134812]">הכנס לחשבון</span>
+  </p>
+</div>

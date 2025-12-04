@@ -7,11 +7,15 @@ import { ButtonModule } from 'primeng/button';
   selector: 'app-register',
   standalone: true,
   imports: [FormsModule, InputTextModule, ButtonModule],
-  templateUrl: './register.component.html'
+  templateUrl: './register.component.html',
+   styleUrl: './register.component.scss'
+
 })
 export class RegisterComponent {
-  showPass = false;
-  showConfirm = false;
-show = false;
+showPassword = false;
+
+togglePassword() {
+  this.showPassword = !this.showPassword;
+}
 
 }

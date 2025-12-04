@@ -1,0 +1,30 @@
+/* login.component.scss */
+
+@import '../../../../styles/variables'; 
+
+:host {
+  font-family: $font-family-base;
+}
+input {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+input,
+button {
+  font-family: $font-family-base;
+}
+
+.p-inputtext {
+  border-radius: 999px !important;
+  background: #f5f5f5 !important;
+}
+
+.p-button {
+  border-radius: 999px !important;
+  background-color: $color-primary !important;
+}

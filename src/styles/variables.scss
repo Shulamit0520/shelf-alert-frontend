@@ -1,0 +1,32 @@
+
+// 🎨 צבעי יסוד (בהתבסס על צילום המסך - ירוק כהה ורקע בהיר)
+$color-primary: #134812; 
+$color-secondary: #B1EB70; 
+$color-text: #333333;
+$color-error: #dc2626;
+$color-border: #e5e5e5;
+$color-link: $color-primary; // או צבע ירוק כהה יותר
+
+
+// 📐 גדלי פונטים (לצורך דיוק טיפוגרפי)
+$font-size-xl: 1.5rem;   // 24px לכותרות
+$font-size-base: 1rem;   // 16px לטקסט רגיל
+$font-size-sm: 0.875rem; // 14px לתוויות/הערות
+$font-family-base: 'IBM Plex Sans Hebrew', sans-serif;
+// 📏 מרווחים (Space / Padding / Margin)
+// מומלץ להשתמש בערכים המקובלים של Tailwind, או ליצור סקאלה:
+$spacing-1: 0.25rem; // 4px
+$spacing-4: 1rem;    // 16px
+$spacing-6: 1.5rem;  // 24px
+
+// 📱 נקודות שבירה (Breakpoints)
+// חווית מובייל תחילה (עד 768px) [cite: 3]
+$breakpoint-mobile: 767px;
+$breakpoint-tablet: 768px; // לטאבלט ומעלה [cite: 5]
+// ניתן להוסיף $breakpoint-desktop אם נדרש
+
+@mixin tablet {
+  @media (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}

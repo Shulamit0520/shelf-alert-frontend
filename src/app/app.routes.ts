@@ -11,12 +11,7 @@ export const routes: Routes = [
       {path: 'register', component: RegisterComponent },
       {path: 'popupScanSuccrss', component: ScanSuccessComponent },
 
-{
-  path: 'scan',
-  loadComponent: () =>
-    import('./features/scan/scan-page/scan-page.component')
-      .then(c => c.ScanPageComponent)
-}
+
 
 ];
 
