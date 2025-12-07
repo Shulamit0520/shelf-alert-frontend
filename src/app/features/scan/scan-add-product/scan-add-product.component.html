@@ -1,0 +1,84 @@
+<div class="w-full min-h-screen bg-white px-6 pt-[60px]" dir="rtl">
+
+  <!-- כותרת -->
+  <h1 class="text-[28px] font-extrabold text-[#134812] mb-[40px] text-right">
+    הוספת מוצר ידנית
+  </h1>
+
+  <!-- העלאת תמונה -->
+  <div
+    class="w-full h-[3.75rem] rounded-full border border-[#d9e2d9] bg-[#f5f5f5]
+           flex items-center justify-between px-6 mb-8 cursor-pointer"
+  >
+    <span class="text-[18px] text-gray-700">הוספת תמונה של המוצר</span>
+    <img src="../assets/addPicture.png" class="w-6 h-6" />
+  </div>
+
+  <!-- שם מוצר -->
+  <label class="block text-[18px] text-gray-700 mb-2 text-right">שם המוצר</label>
+
+  <input
+    pInputText
+    [(ngModel)]="productName"
+    placeholder="גבינה לבנה"
+    class="w-full h-[3.75rem] bg-[#f5f5f5] border border-[#d9e2d9] rounded-full
+           px-6 text-[18px] mb-6"
+  />
+
+  <!-- מספר הברקוד -->
+  <label class="block text-[18px] text-gray-700 mb-2 text-right">מספר הברקוד</label>
+
+  <input
+    pInputText
+    [(ngModel)]="barcode"
+    placeholder="00000000"
+    class="w-full h-[3.75rem] bg-[#f5f5f5] border border-[#d9e2d9] rounded-full
+           px-6 text-[18px] mb-6"
+  />
+
+  <!-- תאריך תפוגה -->
+  <label class="block text-[18px] text-gray-700 mb-2 text-right">
+    תאריך תפוגה על האריזה
+  </label>
+
+  <input
+    pInputText
+    [(ngModel)]="expireDate"
+    placeholder="01.01.2025"
+    class="w-full h-[3.75rem] bg-[#f5f5f5] border border-[#d9e2d9] rounded-full
+           px-6 text-[18px] mb-6"
+  />
+
+  <!-- קטגוריית מוצר -->
+  <label class="block text-[18px] text-gray-700 mb-2 text-right">
+    קטגוריית המוצר
+  </label>
+
+  <p-dropdown
+    [options]="categories"
+    [(ngModel)]="selectedCategory"
+    optionLabel="label"
+    placeholder="בחר קטגוריה"
+    class="w-full category-dropdown"
+  ></p-dropdown>
+
+  <!-- כפתור ירוק -->
+  <button
+    class="w-full h-[64px] rounded-[100px] bg-[#0C3A1F] text-[#B1EB70]
+           text-[18px] font-bold flex items-center justify-center mt-[48px]"
+    (click)="submit()"
+  >
+    הוסף את הפריט
+  </button>
+
+  <app-add-success
+    *ngIf="showPopup"
+    [visible]="showPopup"
+    [productName]="productName"
+    [productImage]="productImage"
+    [scanDate]="scanDate"
+    [expireDate]="expireDate"
+    [category]="selectedCategory?.label"
+  ></app-add-success>
+
+</div>

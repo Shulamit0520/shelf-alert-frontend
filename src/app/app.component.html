@@ -1,27 +1,2 @@
-<nav class="w-full h-[90px] fixed bottom-0 left-0 bg-white border-t flex justify-around items-center shadow-md"
-     dir="rtl">
-
-  <!-- עמוד בית -->
-  <button (click)="goTo('home')" routerLinkActive="text-green-800"
-          class="flex flex-col items-center text-gray-700">
-    <i class="pi pi-home text-3xl"></i>
-    <span class="text-[14px]">עמוד בית</span>
-  </button>
-
-  <!-- סריקת מוצר -->
-  <button (click)="goTo('scan')" routerLinkActive="text-green-800"
-          class="flex flex-col items-center -mt-6 bg-white rounded-full p-4 border-2 border-green-700 shadow-lg">
-    <i class="pi pi-camera text-3xl"></i>
-    <span class="text-[14px] mt-1">סריקת מוצר</span>
-  </button>
-
-  <!-- המוצרים שלי -->
-  <button (click)="goTo('products')" routerLinkActive="text-green-800"
-          class="flex flex-col items-center text-gray-700">
-    <i class="pi pi-shopping-bag text-3xl"></i>
-    <span class="text-[14px]">המוצרים שלי</span>
-  </button>
-
-</nav>
 
 <router-outlet></router-outlet>

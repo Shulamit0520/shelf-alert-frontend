@@ -1,0 +1,44 @@
+<div class="w-full min-h-screen bg-white flex flex-col items-center px-[24px] pt-[88px]" dir="rtl">
+
+  <!-- תמונה -->
+  <div class="w-full h-[260px] border border-[#BDBDBD] rounded-[32px] flex items-center justify-center">
+    <img *ngIf="productImage" [src]="productImage" class="w-full h-full object-cover rounded-[32px]" />
+  </div>
+
+  <!-- כותרת -->
+  <h2 class="text-[#0C3A1F] text-[28px] font-extrabold mt-[48px] text-center">
+    המוצר נוסף בהצלחה!
+  </h2>
+
+  <!-- שם מוצר -->
+  <h3 class="text-[#0C3A1F] text-[24px] font-bold mt-[12px] text-center">
+    {{ productName }}
+  </h3>
+
+  <!-- תאריכים -->
+  <p class="text-gray-700 text-[18px] mt-[8px] text-center leading-tight">
+    תאריך סריקה: {{ scanDate }} <br/>
+    תאריך תפוגה: {{ expireDate }}
+  </p>
+
+  <!-- קטגוריה -->
+  <p class="text-gray-700 text-[18px] font-semibold mt-[20px] text-center">
+    {{ category }}
+  </p>
+
+  <!-- כפתור ירוק -->
+  <button
+    class="w-full h-[64px] rounded-[100px] bg-[#0C3A1F] text-[#B1EB70]
+           text-[18px] font-bold flex items-center justify-center mt-[48px]">
+    הוסף את הפריט ועבור לסל המוצרים
+  </button>
+
+  <!-- כפתור לבן -->
+  <button
+    class="w-full h-[64px] rounded-[100px] border border-[#0C3A1F]/30 
+           bg-[#F8F9F8] text-[#0C3A1F] text-[18px] font-semibold flex 
+           items-center justify-center mt-[16px]">
+    המשך להוספת מוצר נוסף
+  </button>
+
+</div>

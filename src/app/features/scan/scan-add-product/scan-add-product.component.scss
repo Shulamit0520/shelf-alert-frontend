@@ -1,0 +1,44 @@
+/* ביטול הרקע הפנימי (האינפוט שנוצר אוטומטית בתוך dropdown) */
+@import '../../../../styles/variables';
+:host ::ng-deep .p-dropdown .p-inputtext,
+:host ::ng-deep .p-dropdown-label-container,
+:host ::ng-deep .p-dropdown .p-dropdown-label {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
+  display: flex;
+  align-items: center;
+}
+
+/* ביטול border פנימי */
+:host ::ng-deep .p-dropdown .p-inputtext:enabled:focus {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* הכפתור החיצוני של dropdown */
+:host ::ng-deep .p-dropdown {
+  background: #f5f5f5 !important;
+  border: 1px solid #d9e2d9 !important;
+  border-radius: 100px !important;
+  height: 60px !important;
+  width: 100%;
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 20px;
+}
+
+/* החץ */
+:host ::ng-deep .p-dropdown-trigger {
+  background: transparent !important;
+  border: none !important;
+  width: 40px !important;
+}
+
+:host ::ng-deep .p-dropdown-trigger-icon {
+  font-size: 18px !important;
+  opacity: 0.6;
+}

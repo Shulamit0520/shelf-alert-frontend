@@ -1,73 +1,126 @@
-<div class="w-full min-h-screen overflow-y-auto"  dir="rtl">
+<div class="w-full flex justify-center bg-[#F5F5F5]" dir="rtl">
 
-  <!-- כותרת וברכה -->
-  <h1 class="text-[28px] font-extrabold text-[#0C3A1F] text-right">
-    בוקר טוב, {{ userName }}
-  </h1>
+  <!-- מסגרת מובייל -->
+  <div class="w-[393px] min-h-screen bg-white relative pb-[120px]">
 
-  <p class="text-[20px] text-gray-600 mt-2 text-right">
-    הנה המוצרים האחרונים שלך שנסרקו
-  </p>
+    <!-- כותרת וברכה -->
+    <div class="mt-6 px-6">
+      <h1 class="text-[32px] font-extrabold text-[#0C3A1F] text-right leading-tight">
+        בוקר טוב, {{ userName }}
+      </h1>
 
-  <!-- חיפוש -->
-  <div class="w-full mt-8">
-    <input
-      pInputText
-      placeholder="חיפוש מוצר"
-      class="w-full h-[60px] rounded-full bg-[#f5f5f5] border border-[#d9e2d9] px-6 text-[18px]"
-    />
-  </div>
-
-  <!-- רשימת מוצרים -->
-  <div class="mt-10 space-y-6">
-    <div
-      *ngFor="let item of products"
-      class="w-full bg-[#F8FAF8] border border-[#DCE4DB] rounded-[32px] p-6 flex justify-between items-center"
-    >
-      <!-- פרטים -->
-      <div class="text-right">
-        <h2 class="text-[22px] font-extrabold text-[#0C3A1F]">
-          {{ item.name }}
-        </h2>
-
-        <p class="text-gray-700 mt-4 text-[16px]">
-          תאריך סריקה <br />
-          <span class="font-semibold">{{ item.scanDate }}</span>
-        </p>
-
-        <p class="text-gray-700 mt-4 text-[16px]">
-          תאריך פג תוקף <br />
-          <span class="font-semibold">{{ item.expireDate }}</span>
-        </p>
-      </div>
-
-      <!-- תמונה -->
-      <div>
-        <img
-          [src]="item.image"
-          class="w-[110px] h-[110px] rounded-[24px] object-cover"
-        />
-      </div>
+      <p class="text-[20px] text-gray-600 mt-2 text-right">
+        הנה המוצרים האחרונים שלך שנסרקו
+      </p>
     </div>
-  </div>
 
-  <!-- תפריט תחתון -->
-  <div
-    class="w-full h-[95px] bg-white border-t border-gray-300 fixed bottom-0 left-0 flex justify-around items-center"
+    <!-- חיפוש מוצר -->
+    <div class="w-full px-6 mt-8">
+
+      <!-- כותרת החיפוש -->
+      <label class="block text-[18px] text-gray-700 mb-2 font-medium">
+        חיפוש מוצר
+      </label>
+      <input pInputText [(ngModel)]="searchTerm" (input)="filterProducts()" placeholder="טקסט"
+        class="w-full h-[62px] rounded-full bg-[#F7F7F7] border border-[#D9E2D9] px-6 text-[18px]" />
+
+    </div>
+
+    <!-- רשימת מוצרים -->
+    <div class="mt-10 flex flex-col items-center gap-7">
+
+      <!-- כרטיס מוצר — גרסה מתוקנת מלאה -->
+      <div *ngFor="let item of products" class="flex flex-row items-center gap-3
+         w-full max-w-[361px] h-[119px]
+         bg-[#F8FAFA] border border-[#DCE4DB] rounded-[14px]
+         px-3 py-3">
+
+        <!-- תמונה (תמיד בימין כי היא ראשונה ב-DOM) -->
+        <div class="flex-shrink-0 bg-white rounded-[10px]
+              w-[115px] h-[95px] 
+              px-[10px] py-[18px] flex items-center justify-center">
+          <img [src]="item.image" class="w-[90px] h-[54px] object-cover rounded-[6px]" />
+        </div>
+
+        <!-- מרכז — RTL פועל רק לטקסט -->
+        <div class="flex flex-col justify-center items-end flex-grow" dir="rtl">
+
+          <div class="text-[18px] font-bold text-[#134812] mb-1">
+            {{ item.name }}
+          </div>
+
+          <div class="flex flex-row justify-between w-full max-w-[214px]">
+
+            <div class="flex flex-col items-end leading-tight">
+              <div class="text-[12px] font-semibold text-[#535353]">
+                תאריך סריקה
+              </div>
+              <div class="text-[12px] text-[#535353]">
+                {{ item.scanDate }}
+              </div>
+            </div>
+
+            <div class="flex flex-col items-end leading-tight">
+              <div class="text-[12px] font-semibold text-[#535353]">
+                תאריך פג תוקף
+              </div>
+              <div class="text-[12px] text-[#535353]">
+                {{ item.expireDate }}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- פח (תמיד שמאל כי הוא אחרון ב-DOM) -->
+        <button class="w-[42px] h-[42px] flex items-center justify-center flex-shrink-0">
+          <i class="pi pi-trash text-[22px] text-[#737373]"></i>
+        </button>
+
+      </div>
+
+
+    </div>
+
+    <!-- תפריט תחתון -->
+   <nav
+  class="w-full h-[90px] fixed bottom-0 left-0 bg-white border-t flex justify-around items-center shadow-md"
+  dir="rtl"
+>
+
+  <!-- עמוד בית -->
+  <button (click)="goTo('home')" routerLinkActive="text-green-800"
+          class="flex flex-col items-center text-gray-700">
+    <img src="../../../../assets/home.png"class="w-[32px] h-[32px]" />
+    <span class="text-[14px] mt-1">עמוד בית</span>
+  </button>
+
+  <!-- סריקת מוצר – הכפתור המרכזי -->
+  <button
+    (click)="goTo('scan')"
+    routerLinkActive="text-green-800"
+    class="flex flex-col items-center -mt-10"
   >
-    <div class="flex flex-col items-center text-gray-700">
-      <i class="pi pi-shopping-bag text-[28px]"></i>
-      <span class="text-[14px]">המוצרים שלי</span>
+    <!-- העיגול -->
+    <div
+      class="w-[80px] h-[80px] rounded-full bg-white border-2 border-[#0C3A1F]
+             flex items-center justify-center shadow-lg"
+    >
+      <img src="../../../../assets/scanIcon.png" class="w-[36px] h-[36px]" />
     </div>
 
-    <div class="w-[80px] h-[80px] rounded-full border border-[#0C3A1F] flex items-center justify-center bg-white -mt-10 shadow-lg">
-      <i class="pi pi-camera text-[32px] text-[#0C3A1F]"></i>
-    </div>
+    <!-- הטקסט מתחת לעיגול -->
+    <span class="text-[14px] mt-1 text-[#0C3A1F] font-medium">
+      סריקת מוצר
+    </span>
+  </button>
 
-    <div class="flex flex-col items-center text-gray-700">
-      <i class="pi pi-home text-[28px]"></i>
-      <span class="text-[14px]">עמוד בית</span>
-    </div>
+  <!-- המוצרים שלי -->
+  <button (click)="goTo('products')" routerLinkActive="text-green-800"
+          class="flex flex-col items-center text-gray-700">
+    <img src="../../../../assets/myProducts.png" class="w-[32px] h-[32px]" />
+    <span class="text-[14px] mt-1">המוצרים שלי</span>
+  </button>
+
+</nav>
   </div>
-
-</div>

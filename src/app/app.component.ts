@@ -25,7 +25,7 @@ goTo = (page: string) => {
       this.router.navigate(['/addProduct']);
       break;
 
-    case 'home':
+    case '':
       this.router.navigate(['home']);
       break;
   }
