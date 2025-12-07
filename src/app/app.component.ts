@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+  import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,4 +12,23 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'shelf-alert';
+
+constructor(private router: Router) {}
+
+goTo = (page: string) => {
+  switch (page) {
+    case 'home':
+      this.router.navigate(['home']);
+      break;
+
+    case 'scan':
+      this.router.navigate(['/addProduct']);
+      break;
+
+    case 'home':
+      this.router.navigate(['home']);
+      break;
+  }
+};
+
 }

@@ -1,0 +1,73 @@
+<div class="w-full min-h-screen overflow-y-auto"  dir="rtl">
+
+  <!-- כותרת וברכה -->
+  <h1 class="text-[28px] font-extrabold text-[#0C3A1F] text-right">
+    בוקר טוב, {{ userName }}
+  </h1>
+
+  <p class="text-[20px] text-gray-600 mt-2 text-right">
+    הנה המוצרים האחרונים שלך שנסרקו
+  </p>
+
+  <!-- חיפוש -->
+  <div class="w-full mt-8">
+    <input
+      pInputText
+      placeholder="חיפוש מוצר"
+      class="w-full h-[60px] rounded-full bg-[#f5f5f5] border border-[#d9e2d9] px-6 text-[18px]"
+    />
+  </div>
+
+  <!-- רשימת מוצרים -->
+  <div class="mt-10 space-y-6">
+    <div
+      *ngFor="let item of products"
+      class="w-full bg-[#F8FAF8] border border-[#DCE4DB] rounded-[32px] p-6 flex justify-between items-center"
+    >
+      <!-- פרטים -->
+      <div class="text-right">
+        <h2 class="text-[22px] font-extrabold text-[#0C3A1F]">
+          {{ item.name }}
+        </h2>
+
+        <p class="text-gray-700 mt-4 text-[16px]">
+          תאריך סריקה <br />
+          <span class="font-semibold">{{ item.scanDate }}</span>
+        </p>
+
+        <p class="text-gray-700 mt-4 text-[16px]">
+          תאריך פג תוקף <br />
+          <span class="font-semibold">{{ item.expireDate }}</span>
+        </p>
+      </div>
+
+      <!-- תמונה -->
+      <div>
+        <img
+          [src]="item.image"
+          class="w-[110px] h-[110px] rounded-[24px] object-cover"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- תפריט תחתון -->
+  <div
+    class="w-full h-[95px] bg-white border-t border-gray-300 fixed bottom-0 left-0 flex justify-around items-center"
+  >
+    <div class="flex flex-col items-center text-gray-700">
+      <i class="pi pi-shopping-bag text-[28px]"></i>
+      <span class="text-[14px]">המוצרים שלי</span>
+    </div>
+
+    <div class="w-[80px] h-[80px] rounded-full border border-[#0C3A1F] flex items-center justify-center bg-white -mt-10 shadow-lg">
+      <i class="pi pi-camera text-[32px] text-[#0C3A1F]"></i>
+    </div>
+
+    <div class="flex flex-col items-center text-gray-700">
+      <i class="pi pi-home text-[28px]"></i>
+      <span class="text-[14px]">עמוד בית</span>
+    </div>
+  </div>
+
+</div>
