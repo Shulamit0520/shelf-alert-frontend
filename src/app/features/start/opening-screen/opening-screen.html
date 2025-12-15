@@ -1,60 +1,52 @@
-<div 
-  class="w-full min-h-screen bg-white flex flex-col items-center px-6 pt-16"
-  dir="rtl"
->
+<div class="w-full min-h-screen bg-white flex flex-col items-center pt-10 px-6" dir="rtl">
 
   <!-- Illustration -->
-  <img
-    src="assets/vector art.png"
-    alt="illustration"
-    class="w-64 max-w-[70%] mb-14"
-  />
+ <!-- Illustration -->
+<img
+  src="assets/vector art.png"
+  alt="illustration"
+  class="!w-[421px] !max-w-none !h-[328px] mb-8 mt-6"
+/>
+  <!-- Titles container -->
+  <div class="text-center max-w-[199px] mb-10">
+    <h1 class="text-[24px] font-bold leading-[31px] text-[#134812]">
+      ברוכים הבאים
+    </h1>
 
-  <!-- Title -->
-  <h1 class=" text-[32px] font-extrabold text-[#0B3D17] text-center leading-tight">
-    ברוכים הבאים
-  </h1>
+    <p class="text-[24px] font-bold leading-[31px] text-[#8C9983] whitespace-nowrap">
+      כיצד תרצו להתחבר?
+    </p>
+  </div>
 
-  <p class="text-[22px] text-[#0B3D17] text-center mt-3 mb-12">
-    כיצד תרצו להתחבר?
-  </p>
+  <!-- Buttons -->
+  <div class="w-full max-w-[361px] flex flex-col gap-5">
 
-  <!-- Buttons container -->
-  <div class="w-full max-w-sm flex flex-col gap-5">
-
-    <!-- Sign In -->
     <button
-      pButton
-      class="w-full h-14 bg-[#F4F4F4] rounded-full border border-[#DADADA] 
-             !rounded-full !p-0 text-[22px] text-[#0B3D17] font-semibold"
       routerLink="/login"
-    >
+
+      class="w-full h-[56px] rounded-full bg-[#F6F6F6] border border-[#DCE4DB]
+             text-[#134812] text-[16px] font-normal flex items-center justify-center">
       כניסה לחשבון
     </button>
 
-    <!-- Register -->
     <button
-      pButton
-      class="w-full h-14 bg-[#F4F4F4] rounded-full border border-[#DADADA] 
-             !rounded-full !p-0 text-[22px] text-[#0B3D17] font-semibold"
       routerLink="/register"
-    >
+      class="w-full h-[56px] rounded-full bg-[#F6F6F6] border border-[#DCE4DB]
+             text-[#134812] text-[16px] font-normal flex items-center justify-center">
       הרשמה לחשבון
+      
     </button>
 
-    <!-- Google -->
     <button
-      class="w-full h-14 bg-white rounded-full border border-[#BDBDBD] 
-             flex items-center justify-center gap-3 text-[22px] text-[#0B3D17] font-semibold"
-    >
+      class="w-full h-[56px] rounded-full bg-white border border-[#888]
+             text-black text-[16px] font-normal flex items-center justify-center gap-3">
       <img src="assets/icons_google.png" class="w-6 h-6" alt="g" />
       התחברות עם גוגל
     </button>
 
   </div>
 
-  <!-- Guest Login -->
-  <p class="text-[20px] text-[#0B3D17] font-medium mt-10 cursor-pointer">
+  <p class="mt-10 text-[16px] text-[#134812]">
     כניסה ללא משתמש
   </p>
 

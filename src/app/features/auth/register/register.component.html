@@ -52,7 +52,9 @@
   <!-- כפתור ראשי -->
   <button
     pButton
-    class="w-full h-[58px] rounded-full bg-[#134812] text-white text-[20px] font-bold shadow-md mt-10"
+       routerLink="/addProduct"
+    class="w-full h-[58px] rounded-full bg-[#134812]  mt-10 bg-[#134812] border border-black
+           shadow-md flex items-center justify-center text-[16px] font-bold text-[#B1EB70]"
   >
     בוא נתחיל להוסיף מוצרים!
   </button>
@@ -75,6 +77,7 @@
   <!-- קישור תחתון -->
   <p class="text-center mt-8 text-[18px] text-gray-800">
     כבר יש לך משתמש?
-    <span class="font-bold text-[#134812]">הכנס לחשבון</span>
+    <span class="font-bold text-[#134812]"   routerLink="/login"
+>הכנס לחשבון</span>
   </p>
 </div>

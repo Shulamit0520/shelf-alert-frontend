@@ -24,13 +24,37 @@ allProducts = [
     name: "שם המוצר",
     scanDate: "01.02.2025",
     expireDate: "01.02.2025",
-    image: "assets/images/product.png"
+    image: "../../../../assets/noPicture.png"
   },
   {
     name: "מלפפון",
     scanDate: "02.02.2025",
     expireDate: "09.02.2025",
-    image: "assets/images/product.png"
+    image: "../../../../assets/noPicture.png"
+  },
+   {
+    name: "שם המוצר",
+    scanDate: "01.02.2025",
+    expireDate: "01.02.2025",
+    image: "../../../../assets/noPicture.png"
+  },
+  {
+    name: "מלפפון",
+    scanDate: "02.02.2025",
+    expireDate: "09.02.2025",
+    image: "../../../../assets/noPicture.png"
+  },
+   {
+    name: "שם המוצר",
+    scanDate: "01.02.2025",
+    expireDate: "01.02.2025",
+    image: "../../../../assets/noPicture.png"
+  },
+  {
+    name: "מלפפון",
+    scanDate: "02.02.2025",
+    expireDate: "09.02.2025",
+    image: "../../../../assets/noPicture.png"
   }
 ];
 
